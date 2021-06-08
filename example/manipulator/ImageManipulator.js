@@ -176,9 +176,9 @@ class ExpoImageManipulator extends Component {
     getCropBounds = (actualWidth, actualHeight) => {
         const imageRatio = actualHeight / actualWidth
         let originalHeight = Dimensions.get('window').height - 64
-        if (isIphoneX()) {
-            originalHeight = Dimensions.get('window').height - 122
-        }
+        // if (isIphoneX()) {
+        //     originalHeight = Dimensions.get('window').height - 122
+        // }
         const renderedImageWidth = imageRatio < (originalHeight / width) ? width : originalHeight / imageRatio
         const renderedImageHeight = imageRatio < (originalHeight / width) ? width * imageRatio : originalHeight
 
@@ -307,9 +307,9 @@ class ExpoImageManipulator extends Component {
 
         const imageRatio = this.actualSize.height / this.actualSize.width
         let originalHeight = Dimensions.get('window').height - 64
-        if (isIphoneX()) {
-            originalHeight = Dimensions.get('window').height - 122
-        }
+        // if (isIphoneX()) {
+        //     originalHeight = Dimensions.get('window').height - 122
+        // }
 
         const cropRatio = originalHeight / width
 
