@@ -175,10 +175,10 @@ class ExpoImageManipulator extends Component {
 
     getCropBounds = (actualWidth, actualHeight) => {
         const imageRatio = actualHeight / actualWidth
-        let originalHeight = Dimensions.get('window').height - 470
-        // if (isIphoneX()) {
-        //     originalHeight = Dimensions.get('window').height - 122
-        // }
+        let originalHeight = Dimensions.get('window').height - 64
+        if (isIphoneX()) {
+            originalHeight = Dimensions.get('window').height - 122
+        }
         const renderedImageWidth = imageRatio < (originalHeight / width) ? width : originalHeight / imageRatio
         const renderedImageHeight = imageRatio < (originalHeight / width) ? width * imageRatio : originalHeight
 
@@ -306,10 +306,10 @@ class ExpoImageManipulator extends Component {
         } = this.state
 
         const imageRatio = this.actualSize.height / this.actualSize.width
-        let originalHeight = Dimensions.get('window').height - 470
-        // if (isIphoneX()) {
-        //     originalHeight = Dimensions.get('window').height - 122
-        // }
+        let originalHeight = Dimensions.get('window').height - 64
+        if (isIphoneX()) {
+            originalHeight = Dimensions.get('window').height - 122
+        }
 
         const cropRatio = originalHeight / width
 
@@ -439,6 +439,7 @@ class ExpoImageManipulator extends Component {
                 </SafeAreaView>
                 <View style={{ flex: 1, backgroundColor: 'black', width: Dimensions.get('window').width }}>
                     <ScrollView
+                        ref={"imageScrollView"}
                         style={{ position: 'relative', flex: 1 }}
                         contentContainerStyle={{ backgroundColor: 'black' }}
                         maximumZoomScale={5}
