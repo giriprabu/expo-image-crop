@@ -464,24 +464,22 @@ class ExpoImageManipulator extends Component {
                             // onLayout={this.calculateMaxSizes}
                         />
                         {!!cropMode && (
-                            <View style={{ flex: 1, justifyContent: 'center' }}>
-                                <ImageCropOverlay
-                                    onLayoutChanged={(top, left, w, height) => {
-                                        this.currentSize.width = w
-                                        this.currentSize.height = height
-                                        this.currentPos.top = top
-                                        this.currentPos.left = left
-                                    }}
-                                    initialWidth={(fixedMask && fixedMask.width) || cropWidth}
-                                    initialHeight={(fixedMask && fixedMask.height) || cropHeight}
-                                    initialTop={cropInitialTop}
-                                    initialLeft={cropInitialLeft}
-                                    minHeight={(fixedMask && fixedMask.height) || 100}
-                                    minWidth={(fixedMask && fixedMask.width) || 100}
-                                    borderColor={borderColor}
-                                    ratio={ratio || {ratio: {height: null, width: null, }}}
-                                />
-                            </View>
+                            <ImageCropOverlay
+                                onLayoutChanged={(top, left, w, height) => {
+                                    this.currentSize.width = w
+                                    this.currentSize.height = height
+                                    this.currentPos.top = top
+                                    this.currentPos.left = left
+                                }}
+                                initialWidth={(fixedMask && fixedMask.width) || cropWidth}
+                                initialHeight={(fixedMask && fixedMask.height) || cropHeight}
+                                initialTop={cropInitialTop}
+                                initialLeft={cropInitialLeft}
+                                minHeight={(fixedMask && fixedMask.height) || 100}
+                                minWidth={(fixedMask && fixedMask.width) || 100}
+                                borderColor={borderColor}
+                                ratio={ratio || {ratio: {height: null, width: null, }}}
+                            />
                         )
                         }
                     </ScrollView>
