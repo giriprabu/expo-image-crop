@@ -465,7 +465,7 @@ class ExpoImageManipulator extends Component {
                             // onLayout={this.calculateMaxSizes}
                         />
                         {!!cropMode && (
-                            <View style={{ flex: 1, justifyContent: 'center' }}>
+                            <View style={{ justifyContent: 'center' }}>
                                 <ImageCropOverlay
                                     onLayoutChanged={(top, left, w, height) => {
                                         this.currentSize.width = w
